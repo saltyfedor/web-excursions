@@ -1,0 +1,63 @@
+.mainVertical{    
+    display: grid;    
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(4, minmax(55px, 70px));
+    column-gap: 4px;
+    row-gap: 15px;
+    grid-template-areas:
+        ". . . ."
+        "a1 a2 . a3"
+        "b1 b2 . b3"
+        "c1 c2 . c3"
+        "d1 d2 . d3"
+        "e1 e2 . e3"
+        "f1 f2 f3 f4" 
+          
+}
+
+.A1{
+    grid-area: a1;
+}
+.A2{
+    grid-area: a2;
+}
+.GID{
+    grid-area: a3;
+}
+.B1{
+    grid-area: b1;
+}
+.B2{
+    grid-area: b2;
+}
+.B3{
+    grid-area: b3;
+}
+.C1{
+    grid-area: c1;
+}
+.C2{
+    grid-area: c2;
+}
+.C3{
+    grid-area: c3;
+}
+.D1{
+    grid-area: d1;
+}
+.D2{
+    grid-area: d2;
+}
+.D3{
+    grid-area: d3;}
+.E1{
+    grid-area: e1;
+}
+.E2{
+    grid-area: e2;
+}
+.E3{grid-area: e3;}
+.F1{grid-area: f1;}
+.F2{grid-area: f2;}
+.F3{grid-area: f3;}
+.F4{grid-area: f4;}

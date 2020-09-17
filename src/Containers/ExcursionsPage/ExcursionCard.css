@@ -1,0 +1,13 @@
+.image{
+    background-color: black;
+}
+.excTitle{
+    background-color: #1c1a1a;
+    color: inherit;
+    text-decoration: none;
+}
+
+.cardImg{
+    height: 250px;   
+    object-fit: cover;
+}
