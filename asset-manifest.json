@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/web-excursions/static/css/main.66e4082f.chunk.css",
+    "main.js": "/web-excursions/static/js/main.17750d5f.chunk.js",
+    "main.js.map": "/web-excursions/static/js/main.17750d5f.chunk.js.map",
+    "runtime-main.js": "/web-excursions/static/js/runtime-main.9a90ecd9.js",
+    "runtime-main.js.map": "/web-excursions/static/js/runtime-main.9a90ecd9.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/web-excursions/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.93bff9b8.chunk.js": "/web-excursions/static/js/2.93bff9b8.chunk.js",
+    "static/js/2.93bff9b8.chunk.js.map": "/web-excursions/static/js/2.93bff9b8.chunk.js.map",
+    "index.html": "/web-excursions/index.html",
+    "precache-manifest.fb210737c0955cd5f7253d58cb85e0e0.js": "/web-excursions/precache-manifest.fb210737c0955cd5f7253d58cb85e0e0.js",
+    "service-worker.js": "/web-excursions/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/web-excursions/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.66e4082f.chunk.css.map": "/web-excursions/static/css/main.66e4082f.chunk.css.map",
+    "static/js/2.93bff9b8.chunk.js.LICENSE.txt": "/web-excursions/static/js/2.93bff9b8.chunk.js.LICENSE.txt",
+    "static/media/dresden.jpg": "/web-excursions/static/media/dresden.1a311e33.jpg",
+    "static/media/dresden2.jpg": "/web-excursions/static/media/dresden2.102c1dc1.jpg",
+    "static/media/dresden3.jpg": "/web-excursions/static/media/dresden3.3fb0c993.jpg",
+    "static/media/dresden4.jpg": "/web-excursions/static/media/dresden4.6a471ad2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a90ecd9.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.93bff9b8.chunk.js",
+    "static/css/main.66e4082f.chunk.css",
+    "static/js/main.17750d5f.chunk.js"
+  ]
+}
