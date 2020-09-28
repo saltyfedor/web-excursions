@@ -1,5 +1,5 @@
 .title-section{
-    height: 70vh;  
+    height: 70vh;   
 }
 
 .title-image{
@@ -9,5 +9,12 @@
     object-fit: cover;
 }
 
+.title-content{
+    color: white;
+    padding-bottom: 3%;
+    padding-left: 5%;
+}
 
-
+.title-text{
+    margin: 10px;
+}

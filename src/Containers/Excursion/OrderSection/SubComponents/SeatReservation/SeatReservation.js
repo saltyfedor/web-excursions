@@ -7,7 +7,7 @@ class seatReservation extends Component{
     constructor() {
         super();
         this.state = {
-            showReservation: false,
+            showReservation: true,
             windowSize: 0
         };
     }

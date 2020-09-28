@@ -1,8 +1,11 @@
 import React from 'react';
+import './Description.css'
 
 const Description = ({eDescription}) => {
-    return(      
-            <p className="f3 mv4 mid-gray lh-copy">{eDescription}</p>        
+    return ( 
+            <div className="description">
+            <p className="f3 mid-gray lh-copy">{eDescription}</p>
+            </div>
     );
 }
 
