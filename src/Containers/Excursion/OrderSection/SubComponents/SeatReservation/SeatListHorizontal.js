@@ -7,8 +7,8 @@ import Seat from './Seat.js';
 const SeatListHorizontal = () => {
     const booked = useSelector(state => state.excBooked);
     return (
-    <div className="mv2 ph4 flex justify-center items-center">
-        <div className="mainHorizontal ba br4 measure center pa2">
+    <div className="">
+        <div className="mainHorizontal ba br4 measure pa2 bg-white">
         <Seat id='A1' bookedList={booked} />
         <Seat id='A2' bookedList={booked} />        
         <Seat id='GID' bookedList={booked} />

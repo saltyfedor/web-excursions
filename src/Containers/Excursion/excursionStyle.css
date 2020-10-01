@@ -1,5 +1,12 @@
-.contentA{
-    padding-top: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
+
+.buy-grid{  
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grey-b{
+    background-color: lightgrey;
+
 }

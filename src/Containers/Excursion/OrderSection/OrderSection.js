@@ -1,15 +1,13 @@
 import React from 'react';
 import OrderInput from './SubComponents/OrderInput.js'
-import DateMenu from './SubComponents/DateMenu.js'
 import SeatReservation from './SubComponents/SeatReservation/SeatReservation.js';
 import './OrderForm.css'
 
-const OrderForm = ({ eTitle, ePrice }) => {
+const OrderForm = () => {
    
     
     return (           
-        <div className="pb3 black-80 container1">
-            <DateMenu eTitle={eTitle} ePrice={ePrice}/>   
+        <div className="container1 center ba br4 bg-black shadow">
             <OrderInput />
             <SeatReservation />           
         </div>                

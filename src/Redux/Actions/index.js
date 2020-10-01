@@ -73,3 +73,10 @@ export const changeSelected = (status) => {
         status: status
     };
 };
+
+export const logIn = (status) => {
+    return {
+        type: 'LOG_IN',
+        logIn: status
+    };
+};

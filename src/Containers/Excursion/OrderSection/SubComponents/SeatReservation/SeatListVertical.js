@@ -8,7 +8,7 @@ const SeatList = () => {
     const booked = useSelector(state => state.excBooked);
     return (
     <div className="mv2 ph4 flex justify-center">
-        <div className="mainVertical ba br4 measure center pa2">
+        <div className="mainVertical ba br4 measure center pa2 bg-white">
             <Seat id='A1' bookedList={booked} />
             <Seat id='A2' bookedList={booked} />
             <Seat id='GID' bookedList={booked} />

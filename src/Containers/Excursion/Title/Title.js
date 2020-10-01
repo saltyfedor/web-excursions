@@ -22,10 +22,10 @@ const Title = (props) => {
                             color: 'white'
                         }
                     }>
-                        <p className="title-text f1 b">{props.eTitle}</p>
-                        <p className="title-text f3">{`Дата : ${props.eDate}`}</p>
-                        <p className="title-text f3">{`Мест : ${props.eCap}`}</p>
-                        <p className="title-text f3">{`Цена : ${props.ePrice}`}</p>
+                        <h1 className="title-text f1 b">{props.eTitle}</h1>
+                        <p className="title-text f3" >{`Дата : ${props.eDate}`}</p>
+                        <p className="title-text f3" >{`Мест : ${props.eCap}`}</p>
+                        <p className="title-text f3" >{`Цена : ${props.ePrice}`}</p>
                     </div>        
             </header>            
             </div>    

@@ -3,9 +3,10 @@ import './Description.css'
 
 const Description = ({eDescription}) => {
     return ( 
-            <div className="description">
-            <p className="f3 mid-gray lh-copy">{eDescription}</p>
-            </div>
+        <div className="description">
+            <p className="f2 b black lh-copy mt0">О экскурсии :</p>
+            <p className="f3 black lh-copy mt0">{eDescription}</p>
+        </div>
     );
 }
 
