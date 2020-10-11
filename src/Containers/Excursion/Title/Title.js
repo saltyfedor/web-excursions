@@ -3,7 +3,7 @@ import './Title.css';
 
 const Title = (props) => {
    
-        const source = 'dresden4.jpg';
+    const source = props.eImage;
         return (
             <div className="">
                 <header className="title-section" style={

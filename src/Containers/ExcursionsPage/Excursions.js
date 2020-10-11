@@ -10,9 +10,9 @@ const Excursions = () => {
   }
   useEffect(fetchList, list);
   
-  const cardList = list.map((item) => {
+  const cardList = list.map((item) => {   
     return (
-      <ExcursionCard eTitle={item.excTitle} eImage={item.excImageUrl}/>
+      <ExcursionCard eTitle={item.excTitle} eImage={item.excImageUrl} itemId={item.mainId}/>
     )
   }
       );
@@ -26,4 +26,3 @@ const Excursions = () => {
 export default Excursions;
 
 
-// <h3><Link to={`/excursions/${item.excTitle}`}>{item.excTitle}</Link></h3>

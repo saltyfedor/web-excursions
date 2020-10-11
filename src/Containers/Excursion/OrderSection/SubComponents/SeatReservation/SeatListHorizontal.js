@@ -1,5 +1,4 @@
 import React from 'react';
-import store from '../../../../../index.js';
 import { useSelector } from 'react-redux';
 import './SeatListHorizontal.css'
 import Seat from './Seat.js';

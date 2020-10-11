@@ -24,7 +24,7 @@ class App extends Component{
           <Navigation />
           <Route path='/logIn' component={SignIn}/>
           <Route path="/" exact component={() => <Excursions/>}/>       
-          <Route path="/excursions/:name" component={Excursion} />
+          <Route path="/excursions/:name/:id" component={Excursion} />
           <Route path="/admin" exact component={Admin} />         
           <Route path="/admin/excursion/edit/:name" component={ExcursionEdit} />
           <Route path="/admin/excursion/new/" component={CreateExcursion} />

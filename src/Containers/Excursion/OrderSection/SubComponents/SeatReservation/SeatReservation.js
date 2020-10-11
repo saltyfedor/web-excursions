@@ -1,41 +1,21 @@
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 import SeatListVertical from './SeatListVertical.js'
 import SeatListHorizontal from './SeatListHorizontal.js'
 import '../input.css';
 
-class seatReservation extends Component{
-    constructor() {
-        super();
-        this.state = {
-            showReservation: true,
-            windowSize: 0
-        };
-    }
-
-    handleSelectClick = () => {
-        this.setState({ showReservation: true });
-    }
-    componentDidMount() {       
-        this.setState({ windowSize: window.innerWidth })        
-    }
-
-    render() { 
-        if (this.state.windowSize < 800) {
-            return (
-                <div>                  
-                    {this.state.showReservation ? <div><SeatListVertical /></div> : null}                    
-                </div>
-            )
-        } else {
-            return (
-                <div>                 
-                    {this.state.showReservation ? <div> <SeatListHorizontal /></div> : null}
-                </div>
-            )
-        }
+const SeatReservation = () => {
+    const [windowSize, updateWindowSize] = useState(window.innerWidth);
+  
+    if (windowSize < 800) {
+        return (
+            <SeatListVertical />
+        )
+    } else {
+        return (
+            <SeatListHorizontal />
+        )
 
     }
-
 }
 
-export default seatReservation;
+export default SeatReservation;
