@@ -1,11 +1,8 @@
-.navbar{
+.footer{
     background-color: #1c1a1a;
     text-decoration: none;
-    position: sticky; top: 0;
+    margin: 0%;
     padding-left: 3%;
     padding-right: 3%;
 }
 
-.links{
-    text-decoration: none;
-}
