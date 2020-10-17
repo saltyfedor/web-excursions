@@ -4,6 +4,7 @@ import Description from './Description/Description.js';
 import OrderSection from './OrderSection/OrderSection.js';
 import About from './About/About.js';
 import { loadBooked } from '../../Redux/Actions/index.js'
+import { addExcursionId } from '../../Redux/Actions/index.js'
 import store from '../../index.js'
 import './excursionStyle.css';
 
@@ -16,6 +17,7 @@ const Excursion = (props) => {
     {
       updateExcursion(data)
       store.dispatch(loadBooked(data.bookedSeats))
+      store.dispatch(addExcursionId(data.mainId))      
     });
   } 
 

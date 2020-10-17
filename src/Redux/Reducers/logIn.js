@@ -1,5 +1,3 @@
-let defaultEmail = false
-
 
 const logIn = (state = false, action) => {
     switch (action.type) {

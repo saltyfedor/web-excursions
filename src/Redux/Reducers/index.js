@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import orderName from './orderName.js';
+import excurisonId from './excursionId.js';
 import orderId from './orderId.js';
 import orderFirstName from './orderFirstName.js';
 import orderPhone from './orderPhone.js';
@@ -10,7 +10,7 @@ import isDateSelected from './isDateSelected'
 import logIn from './logIn.js';
 
 const allReducers = combineReducers({
-    orderName, orderId, orderFirstName, orderPhone, orderEmail, orderSeats, excBooked, isDateSelected, logIn
+    excurisonId, orderId, orderFirstName, orderPhone, orderEmail, orderSeats, excBooked, isDateSelected, logIn
 })
 
 export default allReducers;

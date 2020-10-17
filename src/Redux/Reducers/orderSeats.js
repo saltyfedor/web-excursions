@@ -7,7 +7,6 @@ const orderSeats = (state = defaultSeats, action) => {
             state = state.concat(action.seat)
             return state;
         case 'REMOVE_SEAT':
-            let seatIndex = defaultSeats.indexOf(action.seat);
             state = state.filter(item => item !== action.seat);
             return state;
         case 'RESET_SEATS':

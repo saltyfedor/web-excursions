@@ -1,7 +1,7 @@
-export const addName = (name) => {
+export const addExcursionId = (mainId) => {  
     return {
-        type: 'ADD_NAME',
-        name: name
+        type: 'ADD_EXCURSIONID',
+        id: mainId
     };
 };
 
