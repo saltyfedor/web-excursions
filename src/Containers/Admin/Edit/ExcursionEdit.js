@@ -20,6 +20,8 @@ const ExcrusionEdit = () => {
     const [booked, updateBooked] = useState(location.state.item.bookedSeats)
     const [Id, updateId] = useState(location.state.item.mainId)
     const [wasUpdated, updateWasUpdated] = useState(false)
+    const [deleteIntention, updateIntention] = useState(false)
+
 
 
     const handleEdit = () => {
@@ -43,7 +45,11 @@ const ExcrusionEdit = () => {
             body: JSON.stringify(
                 excursion                
             )
-        }).then(res => res.json()).then()
+        }).then(res => res.json()).then(() => {
+            if (!wasUpdated) {
+                history.push('/admin')
+            }
+         })
 
         if (wasUpdated) {
             const h = new Headers();
@@ -55,7 +61,7 @@ const ExcrusionEdit = () => {
                 method: 'post',
                 headers: h,
                 body: fd
-            }).then(res => res.json()).then()
+            }).then(res => res.json()).then(history.push('/admin'))
         }
     }
 
@@ -64,6 +70,10 @@ const ExcrusionEdit = () => {
         updateImage(imageName);
         updateWasUpdated(true);
         updateFile(event.target.files[0])
+    }
+
+    const handleDeleteIntent = () => {
+        updateIntention(true)
     }
     
     const handleDelete = () => {
@@ -75,45 +85,59 @@ const ExcrusionEdit = () => {
                     mainId: Id
                 }                
             )
-        }).then(res => res.json()).then()
+        }).then(res => res.json()).then(
+            history.push('/admin')
+        )
     }
-  
-    return (
-        <div className="ma5 flex flex-column">                
-            <div className="dib">
-                <label htmlFor="name" className="f6 b db mb2">Экскурсия<span className="normal black-60"></span></label>
-                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Title} onChange={event => updateTitle(event.target.value)}/>
-            </div>
-            <div className="dib">
-                <label htmlFor="price" className="f6 b db mb2">Цена<span className="normal black-60"></span></label>
-                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Price} onChange={event => updatePrice(event.target.value)}/>
-            </div>
-            <div className="dib">
-                <label htmlFor="img" className="f6 b db mb2">Картинка<span className="normal black-60"></span></label>
-                <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value= {Image}/>
-            </div>
-            <div className="dib">
-                <label htmlFor="img" className="f6 b db mb2">Новая Картинка<span className="normal black-60"></span></label>
-                <input className="input-reset ba b--black-20 pa2 mb2 db" type="file" onChange={event => handleImageSelect(event)}/>
-            </div>
+    if (!deleteIntention) {
+        return (
+            <div className="ma5 flex flex-column">
+                <div className="dib">
+                    <label htmlFor="name" className="f6 b db mb2">Экскурсия<span className="normal black-60"></span></label>
+                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Title} onChange={event => updateTitle(event.target.value)} />
+                </div>
+                <div className="dib">
+                    <label htmlFor="price" className="f6 b db mb2">Цена<span className="normal black-60"></span></label>
+                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="number" value={Price} onChange={event => updatePrice(event.target.value)} />
+                </div>
+                <div className="dib">
+                    <label htmlFor="img" className="f6 b db mb2">Картинка<span className="normal black-60"></span></label>
+                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Image} />
+                </div>
+                <div className="dib">
+                    <label htmlFor="img" className="f6 b db mb2">Новая Картинка<span className="normal black-60"></span></label>
+                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="file" onChange={event => handleImageSelect(event)} />
+                </div>
                 <label htmlFor="price" className="f6 b db mb2">Дата<span className="normal black-60"></span></label>
-                <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Date} onChange={event => updateDate(event.target.value)}/>
+                <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Date} onChange={event => updateDate(event.target.value)} />
            
-            <div className="dib">
-                <label htmlFor="price" className="f6 b db mb2">Место встречи<span className="normal black-60"></span></label>
-                <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Place} onChange={event => updatePlace(event.target.value)}/>
-            </div>       
-            <div className="">
-                <label htmlFor="date" className="f6 b db mb2">Описание<span className="normal black-60"></span></label>
-                <textarea className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text"  rows="15" value={Description} onChange={event => updateDescription(event.target.value)}/>
-            </div>           
+                <div className="dib">
+                    <label htmlFor="price" className="f6 b db mb2">Место встречи<span className="normal black-60"></span></label>
+                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Place} onChange={event => updatePlace(event.target.value)} />
+                </div>
+                <div className="">
+                    <label htmlFor="date" className="f6 b db mb2">Описание<span className="normal black-60"></span></label>
+                    <textarea className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" rows="15" value={Description} onChange={event => updateDescription(event.target.value)} />
+                </div>
                 <div>
                     <button className="" onClick={handleEdit}>Сохранить экскурсию</button>
-                <button className="ml2" onClick={handleDelete}>Удалить экскурсию</button>   
-                </div>   
-            <div/>   
-        </div>
-    )
+                    <button className="ml2" onClick={handleDeleteIntent}>Удалить экскурсию</button>
+                </div>
+                <div />
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className="measure center">
+                <h1>Точно удалить? Это действие нельзя отменить.</h1>
+                <span>
+                    <button onClick={() => {handleDelete()}}>Да, удалить</button>
+                    <button className="ml2" onClick={() => { updateIntention(false) }}>Нет, отменить</button>
+                </span>
+            </div>
+        );
+    }
 }
 
 export default ExcrusionEdit

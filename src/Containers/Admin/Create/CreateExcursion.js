@@ -18,36 +18,43 @@ const CreateExcursion = () => {
     const [Description, updateDescription] = useState('')
 
     const handleCreate = () => {
-        const excursion = {
-            excTitle: Title,
-            excDate: Date,
-            excPlace: Place,
-            maxCap: 19,
-            excDescription: Description,
-            excImageUrl: Image,
-            excPrice: Price,
-            bookedSeats: []
-        }
+        if (Title && Image && ImageFile && Price && Date && Place && Description) {
+            const excursion = {
+                excTitle: Title,
+                excDate: Date,
+                excPlace: Place,
+                maxCap: 19,
+                excDescription: Description,
+                excImageUrl: Image,
+                excPrice: Price,
+                bookedSeats: []
+            }
 
-        const h = new Headers();
-        h.append('Accept', 'application/json')
-        const fd = new FormData();
-        fd.append('image', ImageFile, Image)
+            const h = new Headers();
+            h.append('Accept', 'application/json')
+            const fd = new FormData();
+            fd.append('image', ImageFile, Image)
 
-        fetch('http://localhost:3001/newExcursion', {
-            method: 'put',
-            headers: {'Content-Type' : 'application/json'},
-            body: JSON.stringify(
-                excursion                
+            fetch('http://localhost:3001/newExcursion', {
+                method: 'put',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(
+                    excursion
+                )
+            }).then(res => res.json()).then()
+
+
+            fetch('http://localhost:3001/uploadImage', {
+                method: 'post',
+                headers: h,
+                body: fd
+            }).then(res => res.json()).then(
+                history.push('/admin')
             )
-        }).then(res => res.json()).then()
-
-
-        fetch('http://localhost:3001/uploadImage', {
-            method: 'post',
-            headers: h,
-            body: fd
-        }).then(res => res.json()).then()
+        }
+        else {
+            window.alert('Заполните все поля!')
+        }
     }
 
     const handleImageSelect = (event) => {
@@ -65,7 +72,7 @@ const CreateExcursion = () => {
             </div>
             <div className="dib">
                 <label htmlFor="price" className="f6 b db mb2">Цена<span className="normal black-60"></span></label>
-                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="text" value={Price} onChange={event => updatePrice(event.target.value)}/>
+                    <input className="input-reset ba b--black-20 pa2 mb2 db" type="number" value={Price} onChange={event => updatePrice(event.target.value)}/>
             </div>
             <div className="dib">
                 <label htmlFor="img" className="f6 b db mb2">Картинка<span className="normal black-60"></span></label>

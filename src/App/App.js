@@ -8,6 +8,7 @@ import ExcursionEdit from '../Containers/Admin/Edit/ExcursionEdit'
 import CreateExcursion from '../Containers/Admin/Create/CreateExcursion'
 import SignIn from '../Containers/Admin/Authentification/SignIn.js';
 import Footer from '../Containers/Footer/Footer.js';
+import PaymentSuccess from '../Containers/PostPayment/PaymentSuccess.js';
 import './App.css';
 
 class App extends Component{
@@ -30,6 +31,7 @@ class App extends Component{
           <Route path="/admin" exact component={Admin} />         
           <Route path="/admin/excursion/edit/:name" component={ExcursionEdit} />
           <Route path="/admin/excursion/new/" component={CreateExcursion} />
+          <Route path="/paymentsuccess" component={PaymentSuccess} />  
           </div>
           <Footer />
         </div>
